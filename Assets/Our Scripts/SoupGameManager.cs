@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 
@@ -13,8 +14,8 @@ public class SoupGameManager : MonoBehaviour
 
     public static SoupGameManager control;
     private int PlayerScore=0;
-    private float TimerSec=5.0f;
-    private int TimerMin=1;
+    private float TimerSec=59.0f;
+    private int TimerMin=2;
     private string Timer="";
 
 
@@ -48,6 +49,7 @@ public class SoupGameManager : MonoBehaviour
         else {
             Destroy(gameObject);
         }
+
     }
 
     // Keeps track of countdown timer

@@ -48,7 +48,7 @@ public class PotManager : MonoBehaviour
         }
     }
 
-    public void ClearPot()
+    public static void ClearPot()
     {
         /// <summary>
         /// Set all ingredients to 0.
