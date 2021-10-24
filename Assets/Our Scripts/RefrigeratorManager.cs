@@ -17,10 +17,10 @@ public class RefrigeratorManager : MonoBehaviour
         /// <summary>
         /// Increments the number of carrots to PotManager.
         /// </summary>
-        PotManager.carrots += 1;
+        PotManager.carrot += 1;
 
 
         Debug.Log("Carrot x1 added to pot.");
-        Debug.LogFormat("There are {0} carrots in the pot.", PotManager.carrots);
+        Debug.LogFormat("There are {0} carrots in the pot.", PotManager.carrot);
     }
 }
