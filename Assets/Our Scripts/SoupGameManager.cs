@@ -70,6 +70,7 @@ public class SoupGameManager : MonoBehaviour
                 TimerSec += 59.0f;
             }
         }
+        DebugModeLog(RecipeOrders.RecipeSeries[0].Ings[0]);
     }
 
     public string GetTimer()
@@ -82,6 +83,16 @@ public class SoupGameManager : MonoBehaviour
     {
         DebugModeLog("TimerEnded()!");
     }
+
+
+    public static void SubmitSoup()
+    {
+
+    }
+
+
+
+
 
 
     /******************************************************

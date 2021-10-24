@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af57710b7dfe843388fa04f8f0ed304b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DebugMode: 0
+  DebugMode: 1
   SinkButton: {fileID: 1606679651}
 --- !u!4 &762605944
 Transform:
