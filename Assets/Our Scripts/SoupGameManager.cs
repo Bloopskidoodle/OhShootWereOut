@@ -9,7 +9,13 @@ using UnityEngine.SceneManagement;
 // as initializing all scenes.
 public class SoupGameManager : MonoBehaviour
 {
+    public bool DebugMode;
+
     public static SoupGameManager control;
+    private int PlayerScore=0;
+    private float TimerSec=5.0f;
+    private int TimerMin=1;
+    private string Timer="";
 
 
     // Start is called before the first frame update
@@ -43,5 +49,57 @@ public class SoupGameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    // Keeps track of countdown timer
+    void Update()
+    {
+        Timer = TimerMin.ToString() + ":" + TimerSec.ToString("F0");
+        if (TimerSec < 10) { Timer = TimerMin.ToString()+":0"+TimerSec.ToString("F0"); }
+
+        DebugModeLog(Timer);
+        TimerSec -= Time.deltaTime;
+        if (TimerSec <= 0.0f)
+        {
+            if (TimerMin == 0)
+            {
+                TimerEnded();
+            }else{
+                TimerMin -= 1;
+                TimerSec += 59.0f;
+            }
+        }
+    }
+
+    public string GetTimer()
+    {
+        return Timer;
+    }
+
+    //Called when the game timer reaches 0:00
+    void TimerEnded()
+    {
+        DebugModeLog("TimerEnded()!");
+    }
+
+
+    /******************************************************
+    ****************** HELPER FUNCTIONS *******************
+    ******************************************************/
+
+    //Debug mode Debug.Log
+    void DebugModeLog(params string[] s)
+    {
+        if (DebugMode)
+        {
+            string logInput = "";
+            for (int i=0; i<s.Length; i++)
+            {
+                logInput += s[i];
+            }
+            Debug.Log(logInput);
+        }
+    }
+
+
 
 }
