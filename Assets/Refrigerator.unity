@@ -152,7 +152,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc1940b816c9e446ab835d2bbe02786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CheeseButton: {fileID: 868094587}
   CarrotButton: {fileID: 683295255}
+  FishTailButton: {fileID: 766193465}
+  LemonButton: {fileID: 281808692}
+  TomatoButton: {fileID: 514953204}
+  EggButton: {fileID: 1594934985}
+  MMeatButton: {fileID: 907988036}
+  LettuceButton: {fileID: 673919004}
+  BellPepperButton: {fileID: 671263141}
+  IceCubeButton: {fileID: 1184380877}
+  HumanFingerButton: {fileID: 429674334}
+  TearOfEnemyButton: {fileID: 1639851993}
 --- !u!4 &31717664
 Transform:
   m_ObjectHideFlags: 0
@@ -237,7 +248,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Meat (?)
+  m_Text: Meat(?)
 --- !u!222 &117027394
 CanvasRenderer:
   m_ObjectHideFlags: 0
