@@ -9,6 +9,9 @@ using UnityEngine.SceneManagement;
 // as initializing all scenes.
 public class SoupGameManager : MonoBehaviour
 {
+    public static SoupGameManager control;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +24,24 @@ public class SoupGameManager : MonoBehaviour
         //Zoomed-out Overview scene is Scene 0
     }
 
-    // Update is called once per frame
-    void Update()
+    // Ported from PotManager
+    // Make Manager persist between scenes
+    private void Awake()
     {
-        
+        // Let the gameObject persist over the scenes
+        DontDestroyOnLoad(this);
+
+        // Check if the control instance is null
+        if (control == null)
+        {
+            // This instance becomes the single instance available
+            control = this;
+        }
+        // *ADDED* Prevent duplicate managers from spawning
+        //  when reentering the Kitchen Scene
+        else {
+            DestroyObject(gameObject);
+        }
     }
+
 }

@@ -14,10 +14,10 @@ public class CookBookManager : MonoBehaviour
     {
         for ( int i=0; i<pages.Length; i++ )
         {
-            pages[i].GetComponent<Renderer>().sortingOrder = 0;
+            pages[i].GetComponent<Renderer>().enabled = false;
         }
         currPageIndex = 0;
-        pages[currPageIndex].GetComponent<Renderer>().sortingOrder = 100;
+        pages[currPageIndex].GetComponent<Renderer>().enabled = true;
         DebugModeLog("DebugMode is active...");
     }
 
@@ -26,14 +26,14 @@ public class CookBookManager : MonoBehaviour
     public void PageForward()
     {
         DebugModeLog("PageForward()");
-        pages[currPageIndex].GetComponent<Renderer>().sortingOrder = 0;
+        pages[currPageIndex].GetComponent<Renderer>().enabled = false;
         currPageIndex++;
         if (WithinArrayRange())
         {
-            pages[currPageIndex].GetComponent<Renderer>().sortingOrder = 100;
+            pages[currPageIndex].GetComponent<Renderer>().enabled = true;
         }else{
             currPageIndex--;
-            pages[currPageIndex].GetComponent<Renderer>().sortingOrder = 100;
+            pages[currPageIndex].GetComponent<Renderer>().enabled = true;
         }
         
     }
@@ -43,14 +43,14 @@ public class CookBookManager : MonoBehaviour
     public void PageBack()
     {
         DebugModeLog("PageBack()");
-        pages[currPageIndex].GetComponent<Renderer>().sortingOrder = 0;
+        pages[currPageIndex].GetComponent<Renderer>().enabled = false;
         currPageIndex--;
         if (WithinArrayRange())
         {
-            pages[currPageIndex].GetComponent<Renderer>().sortingOrder = 100;
+            pages[currPageIndex].GetComponent<Renderer>().enabled = true;
         }else{
             currPageIndex++;
-            pages[currPageIndex].GetComponent<Renderer>().sortingOrder = 100;
+            pages[currPageIndex].GetComponent<Renderer>().enabled = true;
         }
     }
 
