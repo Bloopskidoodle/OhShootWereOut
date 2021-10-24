@@ -19,7 +19,7 @@ public class RefrigeratorManager : MonoBehaviour
     public Button TearOfEnemyButton;
     
 
-    private void Start()
+    private void Awake()
     {
         CheeseButton.onClick.AddListener(AddCheese);
         CarrotButton.onClick.AddListener(AddCarrot);
