@@ -40,7 +40,7 @@ public class SoupGameManager : MonoBehaviour
         // *ADDED* Prevent duplicate managers from spawning
         //  when reentering the Kitchen Scene
         else {
-            DestroyObject(gameObject);
+            Destroy(gameObject);
         }
     }
 
