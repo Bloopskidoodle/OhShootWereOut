@@ -14,8 +14,8 @@ public class SoupGameManager : MonoBehaviour
 
     public static SoupGameManager control;
     private int PlayerScore=0;
-    private float TimerSec=59.0f;
-    private int TimerMin=2;
+    private float TimerSec=1.0f;
+    private int TimerMin=0;
     private string Timer="";
 
 
@@ -55,8 +55,11 @@ public class SoupGameManager : MonoBehaviour
     // Keeps track of countdown timer
     void Update()
     {
-        Timer = TimerMin.ToString() + ":" + TimerSec.ToString("F0");
-        if (TimerSec < 10) { Timer = TimerMin.ToString()+":0"+TimerSec.ToString("F0"); }
+        if (TimerMin > -1)
+        {
+            Timer = TimerMin.ToString() + ":" + TimerSec.ToString("F0");
+            if (TimerSec < 10) { Timer = TimerMin.ToString()+":0"+TimerSec.ToString("F0"); }
+        }
 
         DebugModeLog(Timer);
         TimerSec -= Time.deltaTime;
@@ -82,16 +85,30 @@ public class SoupGameManager : MonoBehaviour
     void TimerEnded()
     {
         DebugModeLog("TimerEnded()!");
+        SoupGameManager.EndGame();
     }
 
 
     public static void SubmitSoup()
     {
+        // Calculate Soup Score
+        
+        //Update Current Soup Score
 
+        // Clear pot for next recipe
+        PotManager.ClearPot();
+
+        // Cycle to next recipe. End game if that was last recipe.
+        if (RecipeOrders.NextRecipe())
+        {
+        }
     }
 
 
-
+    public static void EndGame()
+    {
+        Debug.Log("Game ended. Go home.");
+    }
 
 
 

@@ -7,6 +7,7 @@ using UnityEngine;
 public class RecipeOrders : MonoBehaviour
 {
     public static RecipeOrders control;
+    public static int RecipeNumberIndex;
     public struct Recipe
     {
         public List<string> Ings;
@@ -19,6 +20,8 @@ public class RecipeOrders : MonoBehaviour
 
     void Start()
     {
+        RecipeNumberIndex = 0;
+
         Recipe DiabeticSoup;
         DiabeticSoup.Ings = new List<string>();
         DiabeticSoup.Ings.Add("chocolate");
@@ -58,5 +61,16 @@ public class RecipeOrders : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    public static bool NextRecipe()
+    {
+        RecipeNumberIndex++;
+        if (RecipeNumberIndex == RecipeSeries.Length)
+        {
+            return false;
+        }else{
+            return true;
+        }
     }
 }
