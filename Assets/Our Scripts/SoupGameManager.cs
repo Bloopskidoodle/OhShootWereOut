@@ -14,8 +14,8 @@ public class SoupGameManager : MonoBehaviour
 
     public static SoupGameManager control;
     public static int PlayerScore=0;
-    private float TimerSec=1.0f;
-    private int TimerMin=0;
+    private float TimerSec=59.0f;
+    private int TimerMin=2;
     private string Timer="";
 
 
