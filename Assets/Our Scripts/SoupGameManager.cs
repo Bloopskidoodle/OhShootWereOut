@@ -108,6 +108,7 @@ public class SoupGameManager : MonoBehaviour
     public static void EndGame()
     {
         Debug.Log("Game ended. Go home.");
+        SceneManager.LoadScene("End_Game");
     }
 
 
