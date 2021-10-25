@@ -22,6 +22,10 @@ public class StovetopManager : MonoBehaviour
         Debug.Log("Pot has been emptied");
     }
 
+    public void SubmitSoup()
+    {
+        SoupGameManager.SubmitSoup();
+    }
 
 
 
