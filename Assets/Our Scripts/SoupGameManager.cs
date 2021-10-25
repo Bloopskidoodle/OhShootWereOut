@@ -13,7 +13,7 @@ public class SoupGameManager : MonoBehaviour
     public bool DebugMode;
 
     public static SoupGameManager control;
-    public int PlayerScore=0;
+    public static int PlayerScore=0;
     private float TimerSec=1.0f;
     private int TimerMin=0;
     private string Timer="";
@@ -92,15 +92,26 @@ public class SoupGameManager : MonoBehaviour
     public static void SubmitSoup()
     {
         // Calculate Soup Score
-        
+        //  You get 20. Deviations from recipe stats subtract points
+        int CurrentSoupScore = 20;
+        List<int> RecipeGoalStats = new List<int>();
+        for (int i=0; i<3; i++)
+        {
+            
+        }
+
         //Update Current Soup Score
+        SoupGameManager.PlayerScore += CurrentSoupScore;
 
         // Clear pot for next recipe
         PotManager.ClearPot();
 
         // Cycle to next recipe. End game if that was last recipe.
         if (RecipeOrders.NextRecipe())
-        {
+        { 
+            //do nothing
+        }else{
+            SoupGameManager.EndGame();
         }
     }
 
