@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Cabinet_1.unity
     guid: 83ad30400bdad4da6804ed8fbfeb4d57
+  - enabled: 1
+    path: Assets/End_Game.unity
+    guid: fbcae7c1e68b0d848b9497891bea9afc
   m_configObjects: {}
