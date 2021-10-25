@@ -13,7 +13,7 @@ public class SoupGameManager : MonoBehaviour
     public bool DebugMode;
 
     public static SoupGameManager control;
-    private int PlayerScore=0;
+    public int PlayerScore=0;
     private float TimerSec=1.0f;
     private int TimerMin=0;
     private string Timer="";
