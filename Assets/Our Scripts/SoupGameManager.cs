@@ -91,14 +91,35 @@ public class SoupGameManager : MonoBehaviour
 
     public static void SubmitSoup()
     {
+        IngredientDatabase db = new IngredientDatabase();
         // Calculate Soup Score
         //  You get 20. Deviations from recipe stats subtract points
         int CurrentSoupScore = 20;
+        // What stats is the soup supposed to have
+        RecipeOrders.Recipe CurrentSoup = RecipeOrders.RecipeSeries[RecipeOrders.RecipeNumberIndex];
         List<int> RecipeGoalStats = new List<int>();
         for (int i=0; i<3; i++)
         {
-            
+            RecipeGoalStats.Add(0);
         }
+        for (int i=0; i<3; i++)
+        {
+            foreach (string Ing in CurrentSoup.Ings)
+            {
+                RecipeGoalStats[i] += db.Get(Ing)[i];
+            }
+        }
+        // What stats the pot currently has
+        List<int> PotStats = new List<int>();
+        for ( int i=0; i<3; i++ )
+        {
+            PotStats.Add(0);
+        }
+        // for ( int i=0; i<3; i++ )
+        // {
+        //     foreach ()
+        // }
+
 
         //Update Current Soup Score
         SoupGameManager.PlayerScore += CurrentSoupScore;
